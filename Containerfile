@@ -1,7 +1,5 @@
 FROM docker.io/library/eclipse-temurin:24-jdk AS build
 WORKDIR /app
-ENV JAVA_HOME=/opt/java/openjdk
-ENV PATH="$JAVA_HOME/bin:$PATH"
 
 COPY gradlew .
 COPY gradle/ gradle/
