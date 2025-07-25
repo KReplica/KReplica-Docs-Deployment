@@ -26,7 +26,7 @@ podman build -f Containerfile -t kreplica-docs:local "$DOCS_DIR"
 podman pod stop $POD_NAME 2>/dev/null || true
 podman pod rm $POD_NAME 2>/dev/null || true
 
-podman pod create --name $POD_NAME -p 8080:8080
+podman pod create --name $POD_NAME -p 80:8080
 
 podman run -d --pod $POD_NAME --name kreplica-docs-app kreplica-docs:local
 

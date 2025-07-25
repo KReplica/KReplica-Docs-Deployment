@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HOST_PORTS=(8080)
+HOST_PORTS=(80 8080)
 
 echo "[INFO] --reset flag detected. Deleting build/ directory..."
 rm -rf build
