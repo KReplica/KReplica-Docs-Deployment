@@ -19,7 +19,6 @@ WORKDIR /app
 
 COPY --from=build /app/build/libs/*.jar ./application.jar
 
-# KReplica-Docs listens on 8080, KReplica-Sandbox on 8081
 EXPOSE 8080
 EXPOSE 8081
 
