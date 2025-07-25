@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-HOST_PORTS=(8080 8081)
+HOST_PORTS=(8080)
 
 echo "[INFO] --reset flag detected. Deleting build/ directory..."
 rm -rf build
@@ -15,10 +15,6 @@ echo "[INFO] Pruning Podman networks, volumes, and dangling images..."
 podman network prune -f 2>/dev/null || true
 podman volume  prune -f 2>/dev/null || true
 podman image   prune -f 2>/dev/null || true
-
-echo "[INFO] Restarting Podman machine..."
-podman machine stop 2>/dev/null || true
-podman machine start
 
 echo "[INFO] Killing any processes using ports: ${HOST_PORTS[*]}..."
 for port in "${HOST_PORTS[@]}"; do
