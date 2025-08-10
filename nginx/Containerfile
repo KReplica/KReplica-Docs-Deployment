@@ -1,2 +1,2 @@
-FROM docker.io/macbre/nginx-http3:latest
+FROM docker.io/library/nginx:alpine
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf

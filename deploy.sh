@@ -35,7 +35,7 @@ podman build -f nginx/Containerfile -t kreplica-nginx:local .
 podman pod stop $POD_NAME 2>/dev/null || true
 podman pod rm $POD_NAME 2>/dev/null || true
 
-podman pod create --name $POD_NAME -p 80:80/tcp -p 443:443/tcp -p 443:443/udp
+podman pod create --name $POD_NAME -p 80:80 -p 443:443
 
 podman run -d --pod $POD_NAME --name kreplica-nginx \
   -v "${CERTS_PATH}":/etc/nginx/ssl:ro \
